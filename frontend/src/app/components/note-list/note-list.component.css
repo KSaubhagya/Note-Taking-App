@@ -1,64 +1,146 @@
+:root {
+  --primary-color: #1976d2;
+  --primary-hover: #1259a5;
+  --danger-color: #d32f2f;
+  --danger-hover: #9a0007;
+  --bg-light: #f9fafc;
+  --text-color: #333;
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--bg-light);
+}
+
 .note-container {
-  width: 80%;
-  max-width: 600px;
+  width: 90%;
+  max-width: 700px;
   margin: 40px auto;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+.note-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.note-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #666;
 }
 
 .note-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
 }
 
-.note-form input,
-.note-form textarea {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.note-form h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--primary-color);
 }
 
-.note-form button {
-  width: 120px;
-  padding: 8px;
-  background-color: #1976d2;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.note-form button:hover {
-  background-color: #0d47a1;
-}
-
-.notes {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.note {
+.input,
+.textarea {
+  width: 100%;
   padding: 10px;
-  border-radius: 5px;
-  background-color: #f4f4f4;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease-in-out;
 }
 
-.note h3 {
-  margin: 0 0 5px;
+.input:focus,
+.textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
 }
 
-.note .delete {
-  background-color: #d32f2f;
-  color: white;
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
   border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.note .delete:hover {
-  background-color: #9a0007;
+.btn.primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn.danger {
+  background-color: var(--danger-color);
+  color: #fff;
+}
+
+.btn.danger:hover {
+  background-color: var(--danger-hover);
+}
+
+.note-list h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  color: #777;
+  box-shadow: var(--shadow);
+}
+
+.note-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: transform 0.1s ease-in-out;
+}
+
+.note-card:hover {
+  transform: translateY(-2px);
+}
+
+.note-content {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.note-content h3 {
+  margin: 0 0 5px;
+  font-size: 1.1rem;
+}
+
+.note-content p {
+  margin: 0;
+  color: #555;
+  white-space: pre-wrap;
 }
