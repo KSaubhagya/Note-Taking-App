@@ -1,39 +1,45 @@
-<div class="note-container">
-  <header class="note-header">
-    <h1>📝 My Note Taking App</h1>
-    <p class="subtitle">Organize your thoughts quickly and easily</p>
-  </header>
+<div class="background">
+  <div class="note-wrapper">
+    <header class="note-header">
+      <h1>Your Note Taking App</h1>
+      <p class="subtitle">Capture ideas, jot thoughts, stay organized</p>
+    </header>
 
-  <section class="note-form">
-    <h2>Add a New Note</h2>
-    <input
-      type="text"
-      [(ngModel)]="newNote.title"
-      placeholder="Enter note title"
-      class="input"
-    />
-    <textarea
-      [(ngModel)]="newNote.content"
-      placeholder="Write your note here..."
-      rows="4"
-      class="textarea"
-    ></textarea>
-    <button class="btn primary" (click)="addNote()">Add Note</button>
-  </section>
+    <section class="note-card-container">
+      <h2>Add a New Note</h2>
+      <input
+        type="text"
+        [(ngModel)]="newNote.title"
+        placeholder="Enter note title"
+        class="input"
+      />
+      <textarea
+        [(ngModel)]="newNote.content"
+        placeholder="Write your note here..."
+        rows="4"
+        class="textarea"
+      ></textarea>
+      <button class="btn primary" (click)="addNote()">Add Note</button>
+    </section>
 
-  <section class="note-list">
-    <h2>All Notes</h2>
+    <section class="notes-section">
+      <h2>All Notes</h2>
 
-    <div *ngIf="notes.length === 0" class="empty-state">
-      <p>No notes yet. Start by adding one above.</p>
-    </div>
-
-    <div *ngFor="let note of notes" class="note-card">
-      <div class="note-content">
-        <h3>{{ note.title }}</h3>
-        <p>{{ note.content }}</p>
+      <div *ngIf="notes.length === 0" class="empty-state">
+        <p>No notes yet. Start by adding one above.</p>
       </div>
-      <button class="btn danger" (click)="deleteNote(note.id!)">Delete</button>
-    </div>
-  </section>
+
+      <div *ngFor="let note of notes" class="note-card">
+        <div class="note-content">
+          <h3>{{ note.title }}</h3>
+          <p>{{ note.content }}</p>
+        </div>
+        <button class="btn danger" (click)="deleteNote(note.id!)">Delete</button>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Note Taking App | Built with ❤️ using Angular & .NET</p>
+  </footer>
 </div>
