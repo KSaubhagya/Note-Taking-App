@@ -24,3 +24,59 @@ This app allows users to create and delete notes — running locally without nee
 | IDE | Visual Studio Code |
 | Package Manager | npm for frontend, dotnet CLI for backend |
 
+---
+
+## 📂 Project Structure
+
+```plaintext
+Note-Taking-App/
+│
+├── backend/               
+│   ├── Controllers/
+│   │   └── NotesController.cs
+│   ├── Models/
+│   │   └── Note.cs
+│   ├── Program.cs
+│   ├── Properties/
+│   └── NoteTakingApp.csproj
+│
+├── frontend/              
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── components/note-list/
+│   │   │   │   ├── note-list.component.ts
+│   │   │   │   ├── note-list.component.html
+│   │   │   │   └── note-list.component.css
+│   │   │   ├── models/note.model.ts
+│   │   │   └── services/note.service.ts
+│   ├── angular.json
+│   └── package.json
+│
+└── README.md
+```
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/<your-username>/Note-Taking-App.git
+cd Note-Taking-App
+```
+
+### 2️⃣ Backend Setup (.NET)
+```bash
+cd backend
+dotnet restore
+dotnet run
+```
+The backend will start at: http://localhost:5204
+
+
+### 3️⃣ Frontend Setup (Angular)
+```bash
+cd frontend
+npm install
+ng serve
+```
+The frontend will start at: http://localhost:4200
